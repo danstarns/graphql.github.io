@@ -4,5 +4,6 @@ export default {
   'graphql-conf': 'GraphQL Conf',
   'community-grant': '',
   contact: 'Contact Us',
-  'annual-reports': ''
+  'annual-reports': '',
+  members: 'Foundation Members'
 }
