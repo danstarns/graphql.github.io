@@ -57,7 +57,7 @@ typings/
 
 # gatsby files
 .cache/
-public/
+/public/
 
 !static/img/__og-image/
 static/img/__og-image/*
