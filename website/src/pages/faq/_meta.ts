@@ -1,5 +1,10 @@
 export default {
-  index: 'Overview',
+  index: {
+    title: 'Overview',
+    theme: {
+      toc: false,
+    }
+  },
   'getting-started': '',
   general: '',
   'best-practices': '',
