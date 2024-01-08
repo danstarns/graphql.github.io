@@ -15,5 +15,7 @@ export default {
   },
   'best-practices': 'Introduction',
   'thinking-in-graphs': '',
-  'serving-over-http': ''
+  'serving-over-http': '',
+  'authorization': '',
+  'pagination': ''
 }
