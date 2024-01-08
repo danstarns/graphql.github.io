@@ -7,6 +7,10 @@ export default {
     type: 'page',
     title: 'Learn'
   },
+  foundation: {
+    type: 'page',
+    title: 'Foundation'
+  },
   // code: {}
   spec: {
     type: 'page',
