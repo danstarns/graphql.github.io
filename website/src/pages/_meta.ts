@@ -7,15 +7,19 @@ export default {
     type: 'page',
     title: 'Learn'
   },
-  foundation: {
+  faq: {
     type: 'page',
-    title: 'Foundation'
+    title: 'FAQ',
   },
-  // code: {}
   spec: {
     type: 'page',
     title: 'Spec ↗',
     href: 'https://spec.graphql.org',
     newWindow: true
-  }
+  },
+  foundation: {
+    type: 'page',
+    title: 'Foundation'
+  },
+  // code: {}
 }
