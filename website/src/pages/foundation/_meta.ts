@@ -3,5 +3,6 @@ export default {
   join: 'Join GraphQL',
   'graphql-conf': 'GraphQL Conf',
   'community-grant': '',
-  contact: 'Contact Us'
+  contact: 'Contact Us',
+  'annual-reports': ''
 }
