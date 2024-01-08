@@ -1,10 +1,11 @@
 ---
-title: Global Object Identification
 layout: docs
 category: Best Practices
 permalink: /learn/global-object-identification/
 next: /learn/caching/
 ---
+
+# Global Object Identification
 
 > Consistent object access enables simple caching and object lookups
 
@@ -55,14 +56,14 @@ type User implements Node {
 }
 ```
 
-# Specification
+## Specification
 
 Everything below describes with more formal requirements a specification around object
 identification in order to conform to ensure consistency across server implementations. These
 specifications are based on how a server can be compliant with the [Relay][relay] API client, but
 can be useful for any client.
 
-# Reserved Types
+## Reserved Types
 
 A GraphQL server compatible with this spec must reserve certain types and type names
 to support the consistent object identification model. In particular, this spec creates
@@ -71,7 +72,7 @@ guidelines for the following types:
 - An interface named `Node`.
 - The `node` field on the root query type.
 
-# Node Interface
+## Node Interface
 
 The server must provide an interface called `Node`. That interface
 must include exactly one field, called `id` that returns a non-null `ID`.
@@ -79,7 +80,7 @@ must include exactly one field, called `id` that returns a non-null `ID`.
 This `id` should be a globally unique identifier for this object, and given
 just this `id`, the server should be able to refetch the object.
 
-## Introspection
+### Introspection
 
 A server that correctly implements the above interface will accept the following
 introspection query, and return the provided response:
@@ -126,7 +127,7 @@ yields
 }
 ```
 
-# Node root field
+## Node root field
 
 The server must provide a root field called `node` that returns the `Node`
 interface. This root field must take exactly one argument, a non-null ID
@@ -142,7 +143,7 @@ but when the request is made to refetch that user with the `node` root field,
 the user's database may be unavailable, or the user may have deleted their
 account. In this case, the result of querying this field should be `null`.
 
-## Introspection
+### Introspection
 
 A server that correctly implements the above requirement will accept the
 following introspection query, and return a response that contains the
@@ -176,7 +177,7 @@ provided response.
 
 yields
 
-```json
+```jsonc
 {
   "__schema": {
     "queryType": {
@@ -207,7 +208,7 @@ yields
 }
 ```
 
-# Field stability
+## Field stability
 
 If two objects appear in a query, both implementing `Node` with identical
 IDs, then the two objects must be equal.
@@ -278,7 +279,7 @@ Because `fourNode.id` and `fiveNode.userWithIdOneLess.id` are the same, we are
 guaranteed by the conditions above that `fourNode.name` must be the same as
 `fiveNode.userWithIdOneLess.name`, and indeed it is.
 
-# Plural identifying root fields
+## Plural identifying root fields
 
 Imagine a root field named `username`, that takes a user's username and
 returns the corresponding user:
@@ -335,7 +336,7 @@ passed as an argument, and that the order in the response will match the
 order in the argument. We call these _plural identifying root fields_, and
 their requirements are described below.
 
-## Fields
+### Fields
 
 A server compliant with this spec may expose root fields that accept a list of input
 arguments, and returns a list of responses. For spec-compliant clients to use these fields,
