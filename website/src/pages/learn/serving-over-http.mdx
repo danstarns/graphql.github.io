@@ -1,10 +1,11 @@
 ---
-title: Serving over HTTP
 layout: docs
 category: Best Practices
 permalink: /learn/serving-over-http/
 next: /learn/authorization/
 ---
+
+# Serving over HTTP
 
 HTTP is the most common choice for client-server protocol when using GraphQL because of its ubiquity. Here are some guidelines for setting up a GraphQL server to operate over HTTP.
 
@@ -20,7 +21,7 @@ HTTP is commonly associated with REST, which uses "resources" as its core concep
 
 Your GraphQL HTTP server should handle the HTTP GET and POST methods.
 
-### GET request
+### `GET` request
 
 When receiving an HTTP GET request, the GraphQL query should be specified in the "query" query string. For example, if we wanted to execute the following GraphQL query:
 
@@ -40,11 +41,11 @@ http://myapi/graphql?query={me{name}}
 
 Query variables can be sent as a JSON-encoded string in an additional query parameter called `variables`. If the query contains several named operations, an `operationName` query parameter can be used to control which one should be executed.
 
-### POST request
+### `POST` request
 
 A standard GraphQL POST request should use the `application/json` content type, and include a JSON-encoded body of the following form:
 
-```js
+```json
 {
   "query": "...",
   "operationName": "...",
@@ -58,7 +59,7 @@ A standard GraphQL POST request should use the `application/json` content type, 
 
 Regardless of the method by which the query and variables were sent, the response should be returned in the body of the request in JSON format. As mentioned in the spec, a query might result in some data and some errors, and those should be returned in a JSON object of the form:
 
-```js
+```json
 {
   "data": { ... },
   "errors": [ ... ]
@@ -71,16 +72,16 @@ If there were no errors returned, the `"errors"` field should not be present on 
 
 GraphiQL is useful during testing and development but should be disabled in production by default. If you are using express-graphql, you can toggle it based on the NODE_ENV environment variable:
 
-```
+```js
 app.use('/graphql', graphqlHTTP({
   schema: MySessionAwareGraphQLSchema,
-  graphiql: process.env.NODE_ENV === 'development',
-}));
+  graphiql: process.env.NODE_ENV === 'development'
+}))
 ```
 
 ## Node
 
-If you are using NodeJS, we recommend looking at the [list of server implementations](/code/#javascript-server).
+If you are using Node.js, we recommend looking at the [list of server implementations](/code/#javascript-server).
 
 ## Draft Transport Specification
 

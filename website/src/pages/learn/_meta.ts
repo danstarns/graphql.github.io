@@ -14,5 +14,6 @@ export default {
     title: 'Best Practices'
   },
   'best-practices': 'Introduction',
-  'thinking-in-graphs': ''
+  'thinking-in-graphs': '',
+  'serving-over-http': ''
 }
