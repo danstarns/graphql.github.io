@@ -16,6 +16,8 @@ export default {
   'best-practices': 'Introduction',
   'thinking-in-graphs': '',
   'serving-over-http': '',
-  'authorization': '',
-  'pagination': ''
+  authorization: '',
+  pagination: '',
+  'global-object-identification': '',
+  caching: ''
 }
