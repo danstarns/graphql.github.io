@@ -5,5 +5,10 @@ export default {
   'community-grant': '',
   contact: 'Contact Us',
   'annual-reports': '',
-  members: 'Foundation Members'
+  members: 'Foundation Members',
+  landscape: {
+    title: 'GraphQL Landscape ↗',
+    href: 'https://landscape.graphql.org',
+    newWindow: true
+  }
 }

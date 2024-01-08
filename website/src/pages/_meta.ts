@@ -15,6 +15,7 @@ export default {
   spec: {
     type: 'page',
     title: 'Spec ↗',
-    href: 'https://spec.graphql.org'
+    href: 'https://spec.graphql.org',
+    newWindow: true
   }
 }
