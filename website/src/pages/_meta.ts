@@ -21,5 +21,9 @@ export default {
     type: 'page',
     title: 'Foundation'
   },
+  community: {
+    type: 'page',
+    title: 'Community'
+  },
   // code: {}
 }
