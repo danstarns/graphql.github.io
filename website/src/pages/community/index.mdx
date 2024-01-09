@@ -29,7 +29,7 @@ export const getStaticProps = async () => {
   }
 }
  
-export const CommunitesIntro = () => {
+export const CommunityIntro = () => {
   const { meetups } = useData();
 
   return <p>Join one of <strong>{meetups.length}</strong> GraphQL Meetups around the world!</p>
@@ -54,7 +54,7 @@ export const UrlList = ({ urls }) => {
   );
 }
 
-export const CommunitesList = () => {
+export const CommunityList = () => {
   const data = useData();
   const meetups = data.meetups;
   const unsetContinents = meetups.map((meetup) => meetup.continent);
@@ -145,9 +145,9 @@ export const EventsList = () => {
 }
 
 ## GraphQL Communities
-<CommunitesIntro/>
+<CommunityIntro/>
 
-<CommunitesList/>
+<CommunityList/>
 
 ## GraphQL Events
 <EventsIntro/>
